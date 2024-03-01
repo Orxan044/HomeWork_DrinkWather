@@ -27,8 +27,6 @@ internal class Register
 
         List<History> history = new();
 
-        //User user = new(InputName, InputUserName,result,history); 
-
         var user = new User
         {
             Name = InputName,
@@ -37,16 +35,10 @@ internal class Register
             HistoryDate = new()
         };
 
-
-        //User user = new()
-        //{
-        //    Name = InputName,
-        //    UserName = InputUserName,
-        //    Weight = result,
-        //    HistoryDate = new() {}
-        //};
-
-        user.AppendUser(user,FileName);
+        user.AppendUser(user, FileName);
+        Console.Clear() ;
+        Console.WriteLine("Daxil Olmaq Ucun Istifadeci adi Daxil Edin");
+        SigIn.SigInProgram(FileName);
              
     }
 

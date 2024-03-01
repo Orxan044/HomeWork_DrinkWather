@@ -1,5 +1,4 @@
 ﻿
-
 using HomeWork_DrinkWather.Menyu;
 using System.Text.Json;
 
@@ -66,7 +65,23 @@ internal class User
 
     public void ShowHistory(User user,string FileName)
     {
-       
+        Console.Clear();
+        List<User> users = new();
+        var jsonRead = File.ReadAllText(FileName);
+        var jsonDeserialize = JsonSerializer.Deserialize<List<User>>(jsonRead);
+        jsonDeserialize?.ForEach(j => users.Add(j));
+        foreach (var userNew in users)
+        {
+            if(user.UserName == userNew.UserName)
+            {
+                foreach (var item in userNew.HistoryDate)
+                {
+                    Console.WriteLine($"Tarix -> {item.DateDrink.Day} , {item.DateDrink.Month} , {item.DateDrink.Year}");
+                    Console.WriteLine($"Icdiyin Suyun Miqadari -> {item.DrinkWatherLT} lt");
+                }
+                
+            }
+        }
     }
 
 

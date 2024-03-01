@@ -27,7 +27,7 @@ internal class SigIn
 
             foreach (var user in users)
             {
-                if (user.UserName == InputUserName) { check = false; UserMenu.UserMenuProgram(user, FileName); }
+                if (user.UserName == InputUserName) { check = false; UserMenu.CheckDay(user, FileName); }
             }
             if (check)
             { 
